@@ -1,0 +1,30 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=4698
+
+How it works
+
+When initialized, set related files
+In vim window, when n is pressed
+
+1. Get the current file name
+2. Get the related files
+3. Open a window with related files and let you to choose which file to open
+   1) <Enter> to open in a current window
+   2) "o" to open in a horizontally splitted window
+   3) "v" to open in a vertically split window
+
+For Rails developers, there is pre-defined mapping like the following. You may want to change this. If so, you can re-define this in your .vimrc
+    let g:nextFilesMap["Ruby On Rails"] = {
+      \ "Ruby On Rails" : {
+        \ "Controller" : { "expression" : "app/controllers/(.*)_controller.rb$", "transform" : "pluralize" },
+        \ "Funtional Test" : { "expression" : "test/functional/(.*)_controller_test.rb$", "transform" : "pluralize" },
+        \ "View" : { "expression" : "app/views/(.*)/", "transform" : "pluralize" },
+        \ "Model" : { "expression" : "app/models/(.*).rb$", "transform" : "singularize" },
+        \ "Unit Test" : { "expression" : "test/unit/(.*)_test.rb$", "transform" : "singularize" }
+      \ }
+    \ }
+
+For screenshot and source code, visit https://github.com/bighostkim/nextfile.vim,
+ and if you want to make this better, please log an issue or fork this repository.
+
+If you like this, you may like files.vim also,  https://github.com/bighostkim/files.vim.
+
